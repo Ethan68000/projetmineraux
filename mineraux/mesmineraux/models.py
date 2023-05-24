@@ -8,5 +8,5 @@ class Livre(models.Model):
     resume = models.TextField(null = True, blank = True)
 
     def __str__(self):
-        chaine = f"{self.titre} écrit par {self.auteur} édité le {self.date_parution}"
+        chaine = f"{self.nompierre} de couleur {self.couleur} qui vient de {self.nationalité} et qui pèse {self.poids} kg"
         return chaine

@@ -31,6 +31,6 @@ def traitement(request):
     lform = LivreForm(request.POST)
     if lform.is_valid():
         livre = lform.save()
-        return render(request, "bibliotheque/affiche.html", {"livre": livre})
+        return render(request, "mesmineraux/affiche.html", {"livre": livre})
     else:
-        return render(request, "bibliotheque/ajout.html", {"form": lform})
+        return render(request, "mesmineraux/ajout.html", {"form": lform})
