@@ -7,6 +7,12 @@
     <title>index</title>
 </head>
 <body>
-    <h1> Bienvenue dans le monde des mineraux </h1>
+{% if nom is not None %}
+    <h1> Hello {{nom}} </h1>
+{% else %}
+    <h1> Hello world </h1>
+{% endif %}
+
+
 </body>
 </html>
