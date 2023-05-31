@@ -34,3 +34,7 @@ def traitement(request):
         return render(request, "mesmineraux/affiche.html", {"livre": livre})
     else:
         return render(request, "mesmineraux/ajout.html", {"form": lform})
+    
+def affiche(request, id):
+    livre = models.Livre.objects.get(pk=id)
+    return render(request,"mesmineraux/affiche.html",{"livre": livre})
