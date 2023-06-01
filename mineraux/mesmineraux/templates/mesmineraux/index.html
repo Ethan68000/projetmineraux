@@ -9,7 +9,8 @@
 <ul>
     {% for l in liste %}
     <li> livre {{l.id}} : {{l}}
-    <a href ="/mesmineraux/affiche/{{l.id}}/"> Afficher la liste</a>
+    <a href ="/mesmineraux/affiche/{{l.id}}/"> Afficher la description de la pierre</a>
+    <a href ="/mesmineraux/delete/{{l.id}}/"> Supprimer</a>
     </li>
     {% endfor %}
 </ul>

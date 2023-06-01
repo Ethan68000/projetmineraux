@@ -1,9 +1,12 @@
-from django.shortcuts import render
+from django.http import HttpResponseRedirect
 from .forms import LivreForm
+from django.shortcuts import render
 from . import models
 
+
 def index(request):
-    return render(request, 'mesmineraux/index.html')
+    liste = models.Livre.objects.all()
+    return render(request, 'mesmineraux/index.html', {"liste": liste})
 
 def ajout(request):
     if request.method == "POST":
@@ -32,3 +35,8 @@ def affiche(request, id):
 def panier(request, id):
     livre = models.Livre.objects.get(pk=id)
     return render(request, "mesmineraux/panier.html", {"livre": livre})
+
+def delete(request, id):
+    suppr = models.Livre.objects.get(pk=id)
+    suppr.delete()
+    return HttpResponseRedirect("/mesmineraux/index/",)
