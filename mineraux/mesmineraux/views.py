@@ -1,42 +1,42 @@
 from django.http import HttpResponseRedirect
-from .forms import LivreForm
+from .forms import PierreForm
 from django.shortcuts import render
 from . import models
 
 
 def index(request):
-    liste = models.Livre.objects.all()
+    liste = models.Pierre.objects.all()
     return render(request, 'mesmineraux/index.html', {"liste": liste})
 
 def ajout(request):
     if request.method == "POST":
-        form = LivreForm(request)
+        form = PierreForm(request)
         if form.is_valid():
-            livre = form.save()
-            return render(request,"mesmineraux/affiche.html",{"livre" : livre})
+            pierre = form.save()
+            return render(request,"mesmineraux/affiche.html",{"pierre" : pierre})
         else:
             return render(request,"mesmineraux/ajout.html",{"form": form})
     else :
-        form = LivreForm()
+        form = PierreForm()
         return render(request,"mesmineraux/ajout.html",{"form" : form})
 
 def traitement(request):
-    lform = LivreForm(request.POST)
+    lform = PierreForm(request.POST)
     if lform.is_valid():
-        livre = lform.save()
-        return render(request, "mesmineraux/affiche.html", {"livre": livre})
+        pierre = lform.save()
+        return render(request, "mesmineraux/affiche.html", {"pierre": pierre})
     else:
         return render(request, "mesmineraux/ajout.html", {"form": lform})
     
 def affiche(request, id):
-    livre = models.Livre.objects.get(pk=id)
-    return render(request, "mesmineraux/affiche.html",{"livre": livre})
+    pierre = models.Pierre.objects.get(pk=id)
+    return render(request, "mesmineraux/affiche.html",{"pierre": pierre})
 
 def panier(request, id):
-    livre = models.Livre.objects.get(pk=id)
-    return render(request, "mesmineraux/panier.html", {"livre": livre})
+    pierre = models.Pierre.objects.get(pk=id)
+    return render(request, "mesmineraux/panier.html", {"pierre": pierre})
 
 def delete(request, id):
-    suppr = models.Livre.objects.get(pk=id)
+    suppr = models.Pierre.objects.get(pk=id)
     suppr.delete()
     return HttpResponseRedirect("/mesmineraux/index/",)

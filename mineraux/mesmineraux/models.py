@@ -1,6 +1,6 @@
 from django.db import models
 
-class Livre(models.Model):
+class Pierre(models.Model):
     nompierre = models.CharField(max_length=100)
     couleur = models.CharField(max_length = 100)
     nationalité = models.CharField(max_length = 100)
