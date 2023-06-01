@@ -27,7 +27,7 @@ def traitement(request):
     
 def affiche(request, id):
     livre = models.Livre.objects.get(pk=id)
-    return render(request,"mesmineraux/affiche.html",{"livre": livre})
+    return render(request, "mesmineraux/affiche.html",{"livre": livre})
 
 def panier(request, id):
     livre = models.Livre.objects.get(pk=id)

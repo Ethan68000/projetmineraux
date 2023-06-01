@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-    {% load static %}
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="{%static 'mesmineraux/index.css' %}">
     <title>liste mineraux</title>
 </head>
 <body>
     <h1> Bienvenue dans le monde des mineraux </h1>
+<ul>
+    {% for l in liste %}
+    <li> livre {{l.id}} : {{l}}
+    <a href ="/mesmineraux/affiche/{{l.id}}/"> Afficher la liste</a>
+    </li>
+    {% endfor %}
+</ul>
 </body>
 </html>
