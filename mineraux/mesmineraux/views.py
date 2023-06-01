@@ -5,16 +5,6 @@ from . import models
 def index(request):
     return render(request, 'mesmineraux/index.html')
 
-def formulaire(request):
-    return render(request,'mesmineraux/formulaire.html')
-
-def main(request):
-    return render(request, 'mesmineraux/main.html')
-
-def bonjour(request):
-    nom=request.GET["nom"]
-    return render(request,'mesmineraux/bonjour.html',{"nom":nom})
-
 def ajout(request):
     if request.method == "POST":
         form = LivreForm(request)
