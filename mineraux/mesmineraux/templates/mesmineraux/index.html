@@ -6,9 +6,11 @@
 </head>
 <body>
     <h1> Bienvenue dans le monde des mineraux </h1>
+    <h2></h2>
 <ul>
     {% for l in liste %}
-    <li> livre {{l.id}} : {{l}}
+    <li> pierre {{l.id}} : {{l}}
+    <a href ="/mesmineraux/ajout">Ajouter une pierre</a>
     <a href ="/mesmineraux/affiche/{{l.id}}/"> Afficher la description de la pierre</a>
     <a href ="/mesmineraux/delete/{{l.id}}/"> Supprimer</a>
     </li>
