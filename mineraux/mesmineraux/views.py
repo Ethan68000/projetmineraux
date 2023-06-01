@@ -20,7 +20,7 @@ def ajout(request):
         form = LivreForm(request)
         if form.is_valid():
             livre = form.save()
-            return render(request,"/mesmineraux/affiche.html",{"livre" : livre})
+            return render(request,"mesmineraux/affiche.html",{"livre" : livre})
         else:
             return render(request,"mesmineraux/ajout.html",{"form": form})
     else :

@@ -9,7 +9,7 @@ class LivreForm(ModelForm):
         labels = {
             'nompierre' : _('Nom de la pierre'),
             'couleur' : _('Quelle est sa couleur') ,
-            'provenance' : _('quelle est sa provenance'),
+            'nationalité' : _('quelle est sa provenance'),
             'poids' : _('poids'),
             'description' : _('description')
         }
