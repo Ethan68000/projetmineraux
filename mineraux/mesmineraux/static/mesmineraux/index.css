@@ -20,17 +20,15 @@ nav {
 }
 li {
     list-style-type: none;
-   }
-  header li {
-    float: right;
-    font-size: 1.2em;
+    font-size: 1.5em;
 }
- header li a {
-   text-decoration: underline;
-   display: block;
-   text-align: center;
-   padding: 28px 22px;
-   font-family: 'Goudy Old Style', cursive;
+
+header li a {
+  text-decoration: underline;
+  display: block;
+  text-align: center;
+  padding: 28px 22px;
+  font-family: 'Goudy Old Style', cursive;
 }
 
 #logo {

@@ -15,20 +15,19 @@
 </head>
 <style>
     body {
-    background-image: url("{% static '/mesmineraux/fond2.jpg' %}");
+    background-image: url("{% static '/mesmineraux/bleufond.webp' %}");
     }
 </style>
 <body>
 <br> <br> <br> <br>
 <h1> Bienvenue dans le monde des mineraux </h1>
 <ul>
-    {% for l in liste %}
-    <li> pierre {{l.id}} : {{l}}
-    <a href ="/mesmineraux/ajout">Ajouter une pierre</a>
+{% for l in liste %}
+<li> pierre {{l.id}} : {{l}}
     <a href ="/mesmineraux/affiche/{{l.id}}/"> Afficher la description de la pierre</a>
     <a href ="/mesmineraux/delete/{{l.id}}/"> Supprimer</a>
     <a href ="/mesmineraux/update/{{l.id}}/"> mettre a jour</a>
-    </li>
+</li>
     {% endfor %}
 </ul>
 </body>
