@@ -13,3 +13,14 @@ class PierreForm(ModelForm):
             'poids' : _('poids'),
             'description' : _('description')
         }
+
+class livreForm(ModelForm):
+    class Meta:
+        model = models.Livre
+        fields = ('nom_livre', 'contenu_pierre', 'page', 'resume')
+        labels = {
+            'nom_livre' : _('Nom du livre'),
+            'contenu_pierre' : _('Quel pierre seront dedans'),
+            'page' : _('nombre de page'),
+            'resume'  : _('Resume du livre'),
+        }
