@@ -8,6 +8,8 @@ urlpatterns = [
     path('traitement/', views.traitement),
     path('affiche/<int:id>/', views.affiche),
     path('delete/<int:id>/', views.delete),
+    path('update/<int:id>/', views.update),
+    path('updatetraitement/<int:id>/', views.updatetraitement),
 
     #path('indexlivre/', livreviews.index),
     path('ajoutlivre/', livreviews.ajout),

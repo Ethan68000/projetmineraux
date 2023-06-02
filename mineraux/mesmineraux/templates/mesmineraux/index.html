@@ -4,26 +4,30 @@
     <meta charset="UTF-8">
     {% load static %}
     <link rel="stylesheet" href="{% static 'mesmineraux/index.css' %}">
+<nav>
+    <ul>
+        <li id="logo"><a href="#">Mineraux</a></li>
+        <a href ="/mesmineraux/ajout">Ajouter une pierre</a>
+        <a href ="/mesmineraux/ajoutlivre">Ajouter un livre</a>
+    </ul>
+</nav>
     <title>liste mineraux</title>
 </head>
+<style>
+    body {
+    background-image: url("{% static '/mesmineraux/fond2.jpg' %}");
+    }
+</style>
 <body>
-    <h1> Bienvenue dans le monde des mineraux </h1>
-    <h2></h2>
+<br> <br> <br> <br>
+<h1> Bienvenue dans le monde des mineraux </h1>
 <ul>
     {% for l in liste %}
     <li> pierre {{l.id}} : {{l}}
     <a href ="/mesmineraux/ajout">Ajouter une pierre</a>
     <a href ="/mesmineraux/affiche/{{l.id}}/"> Afficher la description de la pierre</a>
     <a href ="/mesmineraux/delete/{{l.id}}/"> Supprimer</a>
-    </li>
-    {% endfor %}
-</ul>
-<ul>
-    {% for l in liste %}
-    <li>livre {{l.id}} : {{l}}
-    <a href ="/mesmineraux/ajoutlivre">Ajouter un livre</a>
-    <a href ="/mesmineraux/affichelivre/{{l.id}}/"> Affiche la description du lire</a>
-    <a href ="/mesmineraux/deletelivre/{{l.id}}/"> Supprimer</a>
+    <a href ="/mesmineraux/update/{{l.id}}/"> mettre a jour</a>
     </li>
     {% endfor %}
 </ul>

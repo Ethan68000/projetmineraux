@@ -36,3 +36,20 @@ def delete(request, id):
     suppr = models.Pierre.objects.get(pk=id)
     suppr.delete()
     return HttpResponseRedirect("/mesmineraux/index/",)
+
+def update(request, id):
+    pierre = models.Pierre.objects.get(pk=id)
+    aform = PierreForm(pierre.dic())
+    return render(request, "mesmineraux/ajoutupdate.html/", {"form":aform, "id":id})
+
+
+def updatetraitement(request, id):
+    aform = PierreForm(request.POST)
+    saveid = id
+    if aform.is_valid():
+        pierre = aform.save(commit = False)
+        pierre.id = saveid
+        pierre.save()
+        return HttpResponseRedirect("/mesmineraux/index/")
+    else:
+        return render(request, "mesmineraux/ajoutupdate.html", {"form": aform})

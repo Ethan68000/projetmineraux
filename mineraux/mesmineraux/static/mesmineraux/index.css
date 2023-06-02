@@ -7,6 +7,37 @@ h1 {
     text-shadow: 1px 3px 2px black;
 }
 
-Body {
-    background-image: url(fond\ imagemineraux.jpg);
+html {
+    scroll-behavior: smooth;
+}
+
+nav {
+    overflow: hidden;
+    background-color: #f5f2e6;
+    position: fixed;
+    width: 100%;
+    opacity: 0.9;
+}
+li {
+    list-style-type: none;
+   }
+  header li {
+    float: right;
+    font-size: 1.2em;
+}
+ header li a {
+   text-decoration: underline;
+   display: block;
+   text-align: center;
+   padding: 28px 22px;
+   font-family: 'Goudy Old Style', cursive;
+}
+
+#logo {
+    font-family: 'Georgia', cursive;
+    font-weight: bold;
+    float: left;
+
+body {
+    background-image: url("imagemineraux.jpg");
 }
