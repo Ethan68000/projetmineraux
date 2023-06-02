@@ -32,10 +32,6 @@ def affiche(request, id):
     pierre = models.Pierre.objects.get(pk=id)
     return render(request, "mesmineraux/affiche.html",{"pierre": pierre})
 
-def panier(request, id):
-    pierre = models.Pierre.objects.get(pk=id)
-    return render(request, "mesmineraux/panier.html", {"pierre": pierre})
-
 def delete(request, id):
     suppr = models.Pierre.objects.get(pk=id)
     suppr.delete()

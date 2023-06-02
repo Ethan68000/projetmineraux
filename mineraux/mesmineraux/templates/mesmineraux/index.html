@@ -18,5 +18,14 @@
     </li>
     {% endfor %}
 </ul>
+<ul>
+    {% for l in liste %}
+    <li>livre {{l.id}} : {{l}}
+    <a href ="/mesmineraux/ajoutlivre">Ajouter un livre</a>
+    <a href ="/mesmineraux/affichelivre/{{l.id}}/"> Affiche la description du lire</a>
+    <a href ="/mesmineraux/deletelivre/{{l.id}}/"> Supprimer</a>
+    </li>
+    {% endfor %}
+</ul>
 </body>
 </html>

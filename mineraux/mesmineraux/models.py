@@ -16,3 +16,7 @@ class Livre(models.Model):
     contenu_pierre = models.CharField(max_length=100)
     page = models.IntegerField(blank=False)
     resume = models.CharField(max_length=500)
+
+    def __str__(self):
+        chainelivre = f"{self.nom_livre} qui contient les pierres {self.contenu_pierre} qui fait {self.page} et qui parle de {self.resume}"
+        return chainelivre
