@@ -1,55 +1,55 @@
 from django.http import HttpResponseRedirect
-from .forms import PierreForm
+from .forms import mesminerauxForm
 from django.shortcuts import render
 from . import models
 
 
 def index(request):
-    liste = models.Pierre.objects.all()
+    liste = models.mesmineraux.objects.all()
     return render(request, 'mesmineraux/index.html', {"liste": liste})
 
 def ajout(request):
     if request.method == "POST":
-        form = PierreForm(request)
+        form = mesminerauxForm(request)
         if form.is_valid():
-            pierre = form.save()
-            return render(request,"mesmineraux/affiche.html",{"pierre" : pierre})
+            mesmineraux = form.save()
+            return render(request,"mesmineraux/affiche.html",{"mesmineraux" : mesmineraux})
         else:
             return render(request,"mesmineraux/ajout.html",{"form": form})
     else :
-        form = PierreForm()
+        form = mesminerauxForm()
         return render(request,"mesmineraux/ajout.html",{"form" : form})
 
 def traitement(request):
-    lform = PierreForm(request.POST)
+    lform = mesminerauxForm(request.POST)
     if lform.is_valid():
-        pierre = lform.save()
-        return render(request, "mesmineraux/affiche.html", {"pierre": pierre})
+        mesmineraux = lform.save()
+        return render(request, "mesmineraux/affiche.html", {"mesmineraux": mesmineraux})
     else:
         return render(request, "mesmineraux/ajout.html", {"form": lform})
     
 def affiche(request, id):
-    pierre = models.Pierre.objects.get(pk=id)
-    return render(request, "mesmineraux/affiche.html",{"pierre": pierre})
+    mesmineraux = models.mesmineraux.objects.get(pk=id)
+    return render(request, "mesmineraux/affiche.html",{"mesmineraux": mesmineraux})
 
 def delete(request, id):
-    suppr = models.Pierre.objects.get(pk=id)
+    suppr = models.mesmineraux.objects.get(pk=id)
     suppr.delete()
     return HttpResponseRedirect("/mesmineraux/index/",)
 
 def update(request, id):
-    pierre = models.Pierre.objects.get(pk=id)
-    aform = PierreForm(pierre.dic())
+    pierre = models.mesmineraux.objects.get(pk=id)
+    aform = mesminerauxForm(pierre.dic())
     return render(request, "mesmineraux/ajoutupdate.html/", {"form":aform, "id":id})
 
 
 def updatetraitement(request, id):
-    aform = PierreForm(request.POST)
+    aform = mesminerauxForm(request.POST)
     saveid = id
     if aform.is_valid():
-        pierre = aform.save(commit = False)
-        pierre.id = saveid
-        pierre.save()
+        mesmineraux = aform.save(commit = False)
+        mesmineraux.id = saveid
+        mesmineraux.save()
         return HttpResponseRedirect("/mesmineraux/index/")
     else:
         return render(request, "mesmineraux/ajoutupdate.html", {"form": aform})

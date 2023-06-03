@@ -1,17 +1,18 @@
 from django.db import models
 
-class Pierre(models.Model):
+class mesmineraux(models.Model):
     nompierre = models.CharField(max_length=100)
     couleur = models.CharField(max_length = 100)
     nationalité = models.CharField(max_length = 100)
     poids = models.IntegerField(blank=False)
     resume = models.TextField(null = True, blank = True)
+    livre = models.ForeignKey("livre", on_delete=models.CASCADE, default=None)
 
     def __str__(self):
         chaine = f"{self.nompierre} de couleur {self.couleur} qui vient de {self.nationalité} et qui pèse {self.poids} kg"
         return chaine
     def dic(self):
-        return {"nompierre":self.nompierre, "couleur":self.couleur, "nationalité":self.nationalité, "poids":self.poids}
+        return {"nompierre":self.nompierre, "couleur":self.couleur, "nationalité":self.nationalité, "poids":self.poids, "livre":self.livre}
 
 class Livre(models.Model):
     nom_livre = models.CharField(max_length=100)

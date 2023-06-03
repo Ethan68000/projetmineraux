@@ -26,10 +26,10 @@ def traitement(request):
 
 
 def affiche(request, id):
-    livre = models.Pierre.objects.get(pk=id)
+    livre = models.Livre.objects.get(pk=id)
     return render(request, "livre/affiche.html", {"pierre": livre})
 
 def delete(request, id):
-    suppr = models.Pierre.objects.get(pk=id)
+    suppr = models.Livre.objects.get(pk=id)
     suppr.delete()
     return HttpResponseRedirect("/mesmineraux/index/",)
