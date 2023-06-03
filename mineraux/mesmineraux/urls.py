@@ -15,6 +15,8 @@ urlpatterns = [
     path('ajoutlivre/', livreviews.ajout),
     path('traitementlivre/', livreviews.traitement),
     path('affichelivre/<int:id>/', livreviews.affiche),
-    path('deletelivre/<int:id>/', livreviews.delete)
+    path('deletelivre/<int:id>/', livreviews.delete),
+    path('updatelivre/<int:id>', livreviews.update),
+    path('updatetraitementlivre/<int:id>/', livreviews.updatetraitement)
 
 ]

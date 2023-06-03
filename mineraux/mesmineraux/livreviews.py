@@ -33,3 +33,20 @@ def delete(request, id):
     suppr = models.Livre.objects.get(pk=id)
     suppr.delete()
     return HttpResponseRedirect("/mesmineraux/index/",)
+
+def update(request, id):
+    livre = models.Livre.objects.get(pk=id)
+    aform = livreForm(livre.dic())
+    return render(request, "livre/ajoutupdate.html/", {"form":aform, "id":id})
+
+
+def updatetraitement(request, id):
+    aform = livreForm(request.POST)
+    saveid = id
+    if aform.is_valid():
+        livre = aform.save(commit = False)
+        livre.id = saveid
+        livre.save()
+        return HttpResponseRedirect("/mesmineraux/index/")
+    else:
+        return render(request, "livre/ajoutupdate.html", {"form": aform})
