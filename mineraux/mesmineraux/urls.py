@@ -11,12 +11,12 @@ urlpatterns = [
     path('update/<int:id>/', views.update),
     path('updatetraitement/<int:id>/', views.updatetraitement),
 
-    #path('indexlivre/', livreviews.index),
+    path('indexlivre/', livreviews.index),
     path('ajoutlivre/', livreviews.ajout),
     path('traitementlivre/', livreviews.traitement),
     path('affichelivre/<int:id>/', livreviews.affiche),
     path('deletelivre/<int:id>/', livreviews.delete),
-    path('updatelivre/<int:id>', livreviews.update),
+    path('updatelivre/<int:id>/', livreviews.update),
     path('updatetraitementlivre/<int:id>/', livreviews.updatetraitement)
 
 ]
