@@ -10,6 +10,8 @@ class Pierre(models.Model):
     def __str__(self):
         chaine = f"{self.nompierre} de couleur {self.couleur} qui vient de {self.nationalité} et qui pèse {self.poids} kg"
         return chaine
+    def dic(self):
+        return {"nompierre":self.nompierre, "couleur":self.couleur, "nationalité":self.nationalité, "poids":self.poids}
 
 class Livre(models.Model):
     nom_livre = models.CharField(max_length=100)

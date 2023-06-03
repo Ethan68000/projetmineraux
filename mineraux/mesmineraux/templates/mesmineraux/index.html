@@ -15,12 +15,14 @@
 </head>
 <style>
     body {
-    background-image: url("{% static '/mesmineraux/bleufond.webp' %}");
+    background-image: url("{% static '/mesmineraux/fondclaire.webp.png' %}");
     }
 </style>
 <body>
 <br> <br> <br> <br>
 <h1> Bienvenue dans le monde des mineraux </h1>
+<br>
+<h2> liste des pierres </h2>
 <ul>
 {% for l in liste %}
 <li> pierre {{l.id}} : {{l}}
