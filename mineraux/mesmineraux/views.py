@@ -38,8 +38,8 @@ def delete(request, id):
     return HttpResponseRedirect("/mesmineraux/index/",)
 
 def update(request, id):
-    pierre = models.mesmineraux.objects.get(pk=id)
-    aform = mesminerauxForm(pierre.dic())
+    mesmineraux = models.mesmineraux.objects.get(pk=id)
+    aform = mesminerauxForm(mesmineraux.dic())
     return render(request, "mesmineraux/ajoutupdate.html/", {"form":aform, "id":id})
 
 
