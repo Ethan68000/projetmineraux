@@ -1,4 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'livre/index.css' %}">
+<nav>
+    <ul>
+        <li id="logo"><a href="#">Mineraux</a></li>
+        <a href ="/mesmineraux/ajoutlivre">Ajouter un livre</a>
+    </ul>
+</nav>
 </head>
+<style>
+    body {
+    background-image: url("{% static '/livre/fondclaire.webp.png' %}");
+    }
+</style>
 <body>
 <br> <br> <br> <br>
 <h1> Bienvenue dans le monde des mineraux </h1>
@@ -7,7 +24,6 @@
 <ul>
 {% for l in liste %}
 <li> livre {{l.id}} : {{l}}
-    <a href ="/mesmineraux/affichelivre/{{l.id}}/"> Afficher la description du livre</a>
     <a href ="/mesmineraux/deletelivre/{{l.id}}/"> Supprimer</a>
     <a href ="/mesmineraux/updatelivre/{{l.id}}/"> mettre a jour</a>
 </li>

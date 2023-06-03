@@ -21,7 +21,7 @@ class Livre(models.Model):
     mesmineraux = models.ForeignKey("mesmineraux", on_delete=models.CASCADE, default=None)
 
     def __str__(self):
-        chainelivre = f"{self.nom_livre} qui contient les pierres {self.contenu_pierre} qui fait {self.page} page et qui parle de {self.resume}"
+        chainelivre = f"{self.nom_livre} qui contient les pierres {self.contenu_pierre} qui fait {self.page} page et qui parle de {self.resume} avec la pierre {self.mesmineraux}"
         return chainelivre
 
     def dic(self):
