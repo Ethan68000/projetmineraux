@@ -24,6 +24,7 @@
 <ul>
 {% for l in liste %}
 <li> livre {{l.id}} : {{l}}
+    <a href = "/mesmineraux/affichelivre/{{l.id}}"> Afficher la description du livre</a>
     <a href ="/mesmineraux/deletelivre/{{l.id}}/"> Supprimer</a>
     <a href ="/mesmineraux/updatelivre/{{l.id}}/"> mettre a jour</a>
 </li>
