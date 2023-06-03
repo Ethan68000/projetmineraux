@@ -32,7 +32,7 @@ def affiche(request, id):
 def delete(request, id):
     suppr = models.Livre.objects.get(pk=id)
     suppr.delete()
-    return HttpResponseRedirect("/livre/index/",)
+    return HttpResponseRedirect("/mesmineraux/indexlivre/",)
 
 def update(request, id):
     livre = models.Livre.objects.get(pk=id)
@@ -47,7 +47,7 @@ def updatetraitement(request, id):
         livre = aform.save(commit = False)
         livre.id = saveid
         livre.save()
-        return HttpResponseRedirect("/livre/index/")
+        return HttpResponseRedirect("/mesmineraux/indexlivre/")
     else:
         return render(request, "livre/ajoutupdate.html", {"form": aform})
 

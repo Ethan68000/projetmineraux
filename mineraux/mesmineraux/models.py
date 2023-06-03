@@ -23,3 +23,6 @@ class Livre(models.Model):
     def __str__(self):
         chainelivre = f"{self.nom_livre} qui contient les pierres {self.contenu_pierre} qui fait {self.page} page et qui parle de {self.resume}"
         return chainelivre
+
+    def dic(self):
+        return {"nom_livre":self.nom_livre, "conten_pierre":self.contenu_pierre, "page":self.page, "resume":self.resume, "mesmineraux":self.mesmineraux}

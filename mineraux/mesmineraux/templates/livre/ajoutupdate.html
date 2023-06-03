@@ -2,9 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>update</title>
 </head>
 <body>
-
+<form method="post" action="/mesmineraux/updatetraitementlivre/{{id}}/">
+{% csrf_token %}
+{{ form.as_ul }}
+<input type="submit" value="envoyer les données">
+</form>
+<a href="/mesmineraux/indexlivre/">Retourner à la page d'accueil</a>
 </body>
 </html>
